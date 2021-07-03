@@ -5,7 +5,7 @@ const router = express.Router()
 // 取得購物車的內容
 router.get('/', async (req, res)=>{
   
-  res.send(Cart.getContents(req.session));
+  res.json(Cart.getContents(req.session));
 });
 
 // 加入商品

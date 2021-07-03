@@ -36,6 +36,8 @@ app.get('/', (req, res)=>{
     res.render('home',{items: d});
 });
 
+
+app.use('/cart/product/order', require(__dirname + '/routes/order'));
 app.use('/cart/product', require(__dirname + '/routes/cartProduct'));
 // app.use('/cart', require(__dirname + '/routes/cart'));
 
