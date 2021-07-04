@@ -19,6 +19,7 @@ const corsOptions = {
     }
 };
 app.use(cors(corsOptions));
+app.use(express.json()); //註解掉會讓 req.body 讀不到 JSON 資料，這是因為 express.json() middleware 幫我們讀資料和轉換成 JSON Object
 app.use(express.static(__dirname + '/../public'));
 app.use(session({
     saveUninitialized: false,
