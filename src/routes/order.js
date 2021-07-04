@@ -22,13 +22,19 @@ router.post("/add", async(req, res)=>{
         console.log(req.body)
     }
 
-    const sql2 = "INSERT INTO `orders` SET ?";
+    const sql2 = "INSERT INTO `orders_p` SET ?";
     const [results] = await db.query(sql2, [
         {
-            orderId: req.body.orderInfo.orderId,
-            username: req.body.orderInfo.username,
+            orderId:req.body.orderInfo.orderId,
+            username:req.body.orderInfo.username,
+            receiverName:req.body.orderInfo.receiverName,
+            receiverPhone:req.body.orderInfo.receiverPhone,
             orderPrice: req.body.orderInfo.orderPrice,
-            paymentTypeId: req.body.orderInfo.paymentTypeId,
+            shippingType:req.body.orderInfo.shippingType,
+            shippingPrice:req.body.orderInfo.shippingPrice,
+            conAddress:req.body.orderInfo.conAddress,
+            homeAddress:req.body.orderInfo.homeAddress,
+            paymentType: req.body.orderInfo.paymentType,
         }
     ]);
 
