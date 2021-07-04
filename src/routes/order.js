@@ -21,11 +21,6 @@ router.post("/add", async(req, res)=>{
         const [results] = await db.query(sql1, [item]);
         console.log(req.body)
     }
-    for (let item of req.body.orderItems){
-        const sql1 = "INSERT INTO `order_items` SET ?";
-        const [results] = await db.query(sql1, [item]);
-        console.log(req.body)
-    }
 
     const sql2 = "INSERT INTO `orders` SET ?";
     const [results] = await db.query(sql2, [
