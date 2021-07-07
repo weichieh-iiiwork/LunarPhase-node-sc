@@ -1,5 +1,5 @@
 const express = require('express')
-const Cart= require(__dirname + "/../modules/CartProduct");
+const Cart= require(__dirname + "/../models/CartProduct");
 const router = express.Router()
 
 // 取得購物車的內容

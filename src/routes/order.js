@@ -32,6 +32,7 @@ router.post("/add", async(req, res)=>{
             orderPrice: req.body.orderInfo.orderPrice,
             shippingType:req.body.orderInfo.shippingType,
             shippingPrice:req.body.orderInfo.shippingPrice,
+            conStore:req.body.orderInfo.conStore,
             conAddress:req.body.orderInfo.conAddress,
             homeAddress:req.body.orderInfo.homeAddress,
             paymentType: req.body.orderInfo.paymentType,
