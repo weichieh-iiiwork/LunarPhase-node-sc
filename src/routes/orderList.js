@@ -11,4 +11,13 @@ router.get('/', async (req, res)=>{
     
 });
 
+router.get('/:orderId', async (req, res)=>{
+
+    let p = await OrderList.getOrderById(req.params.orderId)
+
+    // res.json([req.baseUrl, req.url, p]);
+    res.json(p);
+});
+
+
 module.exports = router; 

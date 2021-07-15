@@ -41,6 +41,7 @@ app.get('/', (req, res)=>{
 app.use('/cart/product/order', require(__dirname + '/routes/order'));
 app.use('/cart/product', require(__dirname + '/routes/cartProduct'));
 app.use('/orderlist', require(__dirname + '/routes/orderList'));
+app.use('/login', require(__dirname + '/routes/login'));
 
 // *** 此段放在所有路由設定的後面***
 app.use((req, res) => {

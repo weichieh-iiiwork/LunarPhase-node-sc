@@ -82,6 +82,19 @@ class OrderList {
         }
     }
 
+    // 讀取單筆
+    static async getOrderById(orderId){
+        if(!orderId) return null;
+        // let sql = 'SELECT * FROM `orders_p` WHERE `orderId`=?';
+        // let sql = 'SELECT * FROM `order_items` INNER JOIN `orders_p` ON `order_items`.`orderId` =  `orders_p`.`orderId` WHERE `order_items`.`orderId`=?';
+        let sql = 'SELECT * FROM `order_items` INNER JOIN `orders_p` ON `order_items`.`orderId` =  `orders_p`.`orderId` LEFT JOIN `items`ON `order_items`.`orderItemsId` = `items`.`itemId`  WHERE `order_items`.`orderId`=?';
+        let [r] = await db.query(sql, [orderId]);
+        if(!r || !r.length){
+            return null;
+        }
+        return r;
+    }
+
 
 
 }
